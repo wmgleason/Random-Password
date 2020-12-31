@@ -42,3 +42,50 @@ function generatePassword(){
   console.log(passwordLength);
   console.log(whichCase);
   console.log(num);
+   // if uppercase and numbers are confirmed
+   if(num === true && whichCase === true){
+    // this line means i = 0 but after it goes through it once it executes the next line i++ until i is equal to the password length
+    for(var i = 0; i <passwordLength; i++){
+
+      charPick = upperNum[Math.floor(Math.random()*upperNum.length)];
+      console.log(charPick);
+      password = password.toString()+charPick.toString();
+      console.log(password);
+    }
+  }  
+//if uppercase but no numbers
+    else if(num != true && whichCase === true){
+      for(var i = 0; i <passwordLength; i++){
+
+      charPick = upperChars[Math.floor(Math.random()*upperChars.length)];
+      console.log(charPick);
+      password = password.toString()+charPick.toString();
+      console.log(password);
+    }
+  }
+// if no uppercase but yes on numbers 
+    else if(num === true && whichCase != true){
+      for(var i = 0; i <passwordLength; i++){
+
+        charPick = characterNum[Math.floor(Math.random()*characterNum.length)];
+        console.log(charPick);
+        password = password.toString()+charPick.toString();
+        console.log(password);       
+      }
+
+    }
+    // if no uppercase AND no numbers - password is all lowercase letters
+    else if(num != true && whichCase != true){
+      for(var i = 0; i <passwordLength; i++){
+
+        charPick = characters[Math.floor(Math.random()*characters.length)];
+        console.log(charPick);
+        password = password.toString()+charPick.toString();
+        console.log(password);
+
+
+  } 
+    }
+    return password;
+}
+
