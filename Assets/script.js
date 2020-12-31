@@ -19,7 +19,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
@@ -30,9 +29,10 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword(){
   // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
-  var passwordLength = prompt("Please choose the number of characters for your password between 8 and 128");
+var passwordLength = getPasswordLength();
+  
   // THEN I choose uppercase,
-  var whichCase = confirm("Do you want uppercase letters?");
+  var whichCase = confirm("Do you want uppercase letters in your password?");
 
   var num = confirm("Do you want numbers in your password?");
   
@@ -83,9 +83,20 @@ function generatePassword(){
         password = password.toString()+charPick.toString();
         console.log(password);
 
-
   } 
     }
+    // Added this function to requiring the user to input a number between 8 and 128 using a do/while loop (because the do/while will keep looking for the right input before moving on)
+    function getPasswordLength() {
+      var ok = false;
+      do {
+          var passwordLength = prompt("Please choose the number of characters for your password between 8 and 128");
+          if (passwordLength < 8 || passwordLength > 128)
+              confirm("No, silly - between 8 and 128.");
+          else
+              ok = true;
+      } while (!ok)
+      return passwordLength;
+  }
     return password;
 }
 
