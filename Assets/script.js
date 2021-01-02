@@ -1,6 +1,40 @@
-// Second approach:
-
 // Figuring out the new approach line by line
+
+// Added this function to requiring the user to input a number between 8 and 128 using a do/while loop (because the do/while will keep looking for the right input before moving on)
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+function getPasswordLength() {
+  var ok = false;
+  do {
+      var passwordLength = prompt("Please choose the number of characters for your password between 8 and 128");
+      if (passwordLength < 8 || passwordLength > 128)
+          confirm("No, silly - between 8 and 128.");
+      else
+          ok = true;
+  } while (!ok)
+  return passwordLength;
+// return password;
+}
+
+function generatePassword(){
+  // WHEN prompted for the length of the password
+// THEN I choose a length of at least 8 characters and no more than 128 characters
+var passwordLength = getPasswordLength();
+}
+function writePassword() {
+  var password = generatePassword ();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+
+// THEN I am presented with a series of prompts for password criteria
+// WHEN prompted for password criteria
+// THEN I select which criteria to include in the password
+
 
 var userChoicesArray = [];
 
@@ -19,13 +53,23 @@ if (numbersChoice == true) {
     document.getElementById.innerHTML = userChoicesArray;
     userChoicesArray.unshift("0","1","2","3","4","5","6","7","8","9");;
 } 
-var specialCharsChoice = confirm("Do you want numbers in your password?");
+var specialCharsChoice = confirm("Do you want special characters in your password?");
 if (specialCharsChoice == true) {
     document.getElementById.innerHTML = userChoicesArray;
     userChoicesArray.unshift("!#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\"");;
 } 
+// let password = '';
+// console.log(passwordLength);
+// console.log(whichCase);
+// console.log(num);
 
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
+//   passwordText.value = password;
+// }
 
 // document.write(userSelectedArrays);
 // Adding elements to the array for variable userSelectedChars
@@ -38,162 +82,4 @@ if (specialCharsChoice == true) {
 //   }
 //   document.getElementById("demo").innerHTML = txt;
 // }
-
-// function fillArrayWUserSelectedArrays() { 
-//   if (upperCaseChoice == true) { 
-//     userSelectedArrays.fill("upperCaseChars");
-//     console.log(userSelectedArrays);
-//   } 
-// } 
-// Commenting out these variables from the old version of my homework -
-// var upperCaseChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-// var lowerCaseChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-// var numberChars = ["0","1","2","3","4","5","6","7","8","9"];
-// var specialChars = ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\""];
-// var userChoicesArray = [];
-
-// how to use push from W3Schools
-//<p id="demo1"></p>
-// <p id="demo2"></p>
-
-// var fruits = ["Banana", "Orange", "Apple", "Mango"];
-// function myFunction(){
-// 	fruits.push("Kiwi")
-// 	var x=document.getElementById("demo");
-// 	x.innerHTML=fruits;
-// }
-// Assignment Code
-// WHEN I click the button to generate a password
-function generatePassword(passwordLength) {
-  var numberChars = "0123456789";
-  var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var lowerChars = "abcdefghijklmnopqrstuvwxyz";
-  var specialChars = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\"";
-  var allChars = numberChars + upperChars + lowerChars + specialChars;
-  var randPasswordArray = Array(passwordLength);
-  randPasswordArray[0] = numberChars;
-  randPasswordArray[1] = upperChars;
-  randPasswordArray[2] = lowerChars;
-  randPasswordArray = randPasswordArray.fill(allChars, 3);
-  return shuffleArray(randPasswordArray.map(function(x) { return x[Math.floor(Math.random() * x.length)] })).join('');
-}
-
-function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-  return array;
-}
-
-alert(generatePassword(12));
-
-
-
-
-
-
-// Assignment Code
-// WHEN I click the button to generate a password
-var generateBtn = document.getElementById("generate");
-var characters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var upperChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-                      "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
-var characterNum = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-                    "0","1","2","3","4","5","6","7","8","9"];
-
-var upperNum = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-                "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-                "0","1","2","3","4","5","6","7","8","9"];
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-
-function generatePassword(){
-  // WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-var passwordLength = getPasswordLength();
-  
-  // THEN I choose uppercase,
-  var whichCase = confirm("Do you want uppercase letters in your password?");
-
-  var num = confirm("Do you want numbers in your password?");
-  
-  // This creates a local variable for the password instead of getting the DOM object with id="password"
-  let password = '';
-
-  console.log(passwordLength);
-  console.log(whichCase);
-  console.log(num);
-   // if uppercase and numbers are confirmed
-   if(num === true && whichCase === true){
-    // this line means i = 0 but after it goes through it once it executes the next line i++ until i is equal to the password length
-    for(var i = 0; i <passwordLength; i++){
-
-      charPick = upperNum[Math.floor(Math.random()*upperNum.length)];
-      console.log(charPick);
-      password = password.toString()+charPick.toString();
-      console.log(password);
-    }
-  }  
-//if uppercase but no numbers
-    else if(num != true && whichCase === true){
-      for(var i = 0; i <passwordLength; i++){
-
-      charPick = upperChars[Math.floor(Math.random()*upperChars.length)];
-      console.log(charPick);
-      password = password.toString()+charPick.toString();
-      console.log(password);
-    }
-  }
-// if no uppercase but yes on numbers 
-    else if(num === true && whichCase != true){
-      for(var i = 0; i <passwordLength; i++){
-
-        charPick = characterNum[Math.floor(Math.random()*characterNum.length)];
-        console.log(charPick);
-        password = password.toString()+charPick.toString();
-        console.log(password);       
-      }
-
-    }
-    // if no uppercase AND no numbers - password is all lowercase letters
-    else if(num != true && whichCase != true){
-      for(var i = 0; i <passwordLength; i++){
-
-        charPick = characters[Math.floor(Math.random()*characters.length)];
-        console.log(charPick);
-        password = password.toString()+charPick.toString();
-        console.log(password);
-
-  } 
-    }
-    // Added this function to requiring the user to input a number between 8 and 128 using a do/while loop (because the do/while will keep looking for the right input before moving on)
-    function getPasswordLength() {
-      var ok = false;
-      do {
-          var passwordLength = prompt("Please choose the number of characters for your password between 8 and 128");
-          if (passwordLength < 8 || passwordLength > 128)
-              confirm("No, silly - between 8 and 128.");
-          else
-              ok = true;
-      } while (!ok)
-      return passwordLength;
-  }
-    return password;
-}
 
