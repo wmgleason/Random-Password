@@ -1,4 +1,67 @@
 // Second approach:
+
+// Figuring out the new approach line by line
+
+var userChoicesArray = [];
+
+var upperCaseChoice = confirm("Do you want uppercase letters in your password?");
+if (upperCaseChoice == true) {
+    document.getElementById.innerHTML = userChoicesArray;
+    userChoicesArray.unshift("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");;
+} 
+var lowerCaseChoice = confirm("Do you want lowercase letters in your password?");
+if (lowerCaseChoice == true) {
+    document.getElementById.innerHTML = userChoicesArray;
+    userChoicesArray.unshift("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");;
+} 
+var numbersChoice = confirm("Do you want numbers in your password?");
+if (numbersChoice == true) {
+    document.getElementById.innerHTML = userChoicesArray;
+    userChoicesArray.unshift("0","1","2","3","4","5","6","7","8","9");;
+} 
+var specialCharsChoice = confirm("Do you want numbers in your password?");
+if (specialCharsChoice == true) {
+    document.getElementById.innerHTML = userChoicesArray;
+    userChoicesArray.unshift("!#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\"");;
+} 
+
+
+
+// document.write(userSelectedArrays);
+// Adding elements to the array for variable userSelectedChars
+// function myFunction() {
+//   var upperCaseChars;
+//   if (confirm("Press a button!")) {
+//     txt = "You pressed OK!";
+//   } else {
+//     txt = "You pressed Cancel!";
+//   }
+//   document.getElementById("demo").innerHTML = txt;
+// }
+
+// function fillArrayWUserSelectedArrays() { 
+//   if (upperCaseChoice == true) { 
+//     userSelectedArrays.fill("upperCaseChars");
+//     console.log(userSelectedArrays);
+//   } 
+// } 
+// Commenting out these variables from the old version of my homework -
+// var upperCaseChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+// var lowerCaseChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// var numberChars = ["0","1","2","3","4","5","6","7","8","9"];
+// var specialChars = ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~\"\""];
+// var userChoicesArray = [];
+
+// how to use push from W3Schools
+//<p id="demo1"></p>
+// <p id="demo2"></p>
+
+// var fruits = ["Banana", "Orange", "Apple", "Mango"];
+// function myFunction(){
+// 	fruits.push("Kiwi")
+// 	var x=document.getElementById("demo");
+// 	x.innerHTML=fruits;
+// }
 // Assignment Code
 // WHEN I click the button to generate a password
 function generatePassword(passwordLength) {
