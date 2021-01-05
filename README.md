@@ -11,8 +11,7 @@ On some READMEs, you may see small images that convey metadata, such as whether 
 <h2>Visuals</h2>
 
 Opening the index.html file in your browser, your screen should display something very similar to this:
-
-<a href=https://unh.bootcampcontent.com/unh-coding-bootcamp/unh-por-fsf-pt-11-2020-u-c/raw/master/01-Class-Content/03-Javascript/02-Homework/Assets/03-javascript-homework-demo.png>
+![Image of the Random Password Generator](https://github.com/wmgleason/Random-Password/blob/main/password-generator-image.png)
 
 <h2>Installation</h2>
 
