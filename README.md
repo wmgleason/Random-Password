@@ -15,7 +15,7 @@ Opening the index.html file in your browser, your screen should display somethin
 
 <h2>Installation</h2>
 
-This project should be usable in any common web browser.
+This project should be usable in any common web browse at this address: <https://wmgleason.github.io/Random-Password/.>
 
 <h2>Usage</h2>
 
